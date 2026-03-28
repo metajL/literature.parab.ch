@@ -11,28 +11,18 @@ categories: ["Buch"]
 toc: false
 ---
 
-## Warum dieser Raum existiert
+## Warum dieses Buch
+
+Die Enzyklopädie der psychoaktiven Pflanzen von Christian Rätsch ist ein umfassendes systematisches Werk, das Hunderte psychoaktive Pflanzen und Pilze aus der ganzen Welt katalogiesiert. 
 
 
-## Was du hier findest
+Es 
 
-Diese Seite wird verschiedene Formen des Schreibens beherbergen:
 
-- **Essays** über Bücher, Autoren und literarische Strömungen
-- **Textanalysen** von Passagen und Gedichten
-- **Reflexionen** über das Handwerk des Schreibens
-- **Kuratierte Sammlungen** in thematischen Reihen organisiert
+## Was du in dieser Ressource findest
 
-## Der Wert des langsamen Lesens
+- **Botanik** Taxonomie, Erkennungsmekmale, Verbreitung und Anbaumethoden
+- **Pharmakologie** Inhaltsstoffe mit Struktur, Wirkung, Zubereitung und Dosierung
+- **Kulturelle Einordnung** Geschichte, rituelle und medizinische Verwendung und Marktformen
+- **Vieles mehr** 
 
-In einer Zeit des endlosen Scrollen
-
-Diese Seite ist für diese Art des Lesens gebaut.
-
-## Zum Design
-
-Dir fallen vielleicht die warmen
-
-## Was als Nächstes kommt
-
-Dies ist erst der Anfang
