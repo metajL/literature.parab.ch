@@ -27,12 +27,12 @@
 </section>
 {{ end }}
 
-{{/* Themen */}}
+{{/* Tags */}}
 {{ $tags := .Site.Taxonomies.tags }}
 {{ if gt (len $tags) 0 }}
 <section class="container" style="padding: 4rem 0;">
   <div class="section-header">
-    <h2 class="section-header__title">Themen</h2>
+    <h2 class="section-header__title">Tags</h2>
   </div>
   <div class="chip-group">
     {{- range $name, $pages := $tags }}
