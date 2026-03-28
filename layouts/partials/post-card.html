@@ -12,8 +12,6 @@
     <div>
       <div class="post-card__meta">
         <time>{{ .page.Date.Format "2. Jan. 2006" }}</time>
-        <span class="post-card__dot"></span>
-        <span>{{ .page.ReadingTime }} Min.</span>
       </div>
       <h3 class="post-card__title">{{ .page.Title }}</h3>
       <p class="post-card__excerpt">{{ .page.Summary | plainify | truncate 160 }}</p>
