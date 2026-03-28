@@ -1,0 +1,45 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-2;
+  font-family: $font-ui;
+  font-size: $fs-sm;
+  font-weight: $fw-semibold;
+  padding: $spacing-3 $spacing-6;
+  border-radius: $border-radius-xl;
+  border: none;
+  cursor: pointer;
+  transition: all $transition-fast;
+  text-decoration: none;
+
+  &--primary {
+    background: $gradient-primary;
+    color: $on-primary;
+    box-shadow: 0 4px 12px rgba($primary, 0.25);
+
+    &:hover {
+      box-shadow: 0 6px 20px rgba($primary, 0.35);
+      transform: translateY(-1px);
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: $primary;
+    border: 1px solid rgba($primary, 0.2);
+
+    &:hover {
+      background: rgba($primary, 0.05);
+      border-color: rgba($primary, 0.4);
+    }
+  }
+
+  &--surface {
+    background: $surface-container;
+    color: $on-surface;
+
+    &:hover {
+      background: $surface-container-high;
+    }
+  }
+}

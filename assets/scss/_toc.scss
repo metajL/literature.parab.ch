@@ -1,0 +1,54 @@
+.toc-sidebar {
+  position: sticky;
+  top: calc(#{$nav-height} + #{$spacing-8});
+  align-self: start;
+
+  &__title {
+    font-family: $font-ui;
+    font-size: $fs-xs;
+    font-weight: $fw-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $on-surface-variant;
+    margin-bottom: $spacing-4;
+  }
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  nav li {
+    margin-bottom: $spacing-1;
+  }
+
+  nav a {
+    font-family: $font-ui;
+    font-size: $fs-sm;
+    color: $outline;
+    display: block;
+    padding: $spacing-1 $spacing-4;
+    border-left: 2px solid transparent;
+    transition: color $transition-fast, border-color $transition-fast;
+    text-decoration: none;
+
+    &:hover {
+      color: $on-surface;
+    }
+
+    &.is-active {
+      color: $primary;
+      border-left-color: $primary;
+      font-weight: $fw-medium;
+    }
+  }
+
+  // Indentation for nested levels
+  nav ul ul {
+    padding-left: $spacing-4;
+
+    a {
+      font-size: $fs-xs;
+    }
+  }
+}

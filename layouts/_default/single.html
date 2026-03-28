@@ -1,0 +1,19 @@
+{{ define "main" }}
+<article class="container">
+  <div class="post-layout{{ if .TableOfContents }} post-layout--with-toc{{ end }}">
+    <header style="margin-bottom: 2rem;">
+      {{ partial "post-meta.html" . }}
+      <h1 style="margin-top: 1rem;">{{ .Title }}</h1>
+      {{ with .Description }}
+      <p class="text-muted" style="font-size: 1.125rem; margin-top: 0.75rem;">{{ . }}</p>
+      {{ end }}
+    </header>
+
+    {{ partial "toc.html" . }}
+
+    <div class="prose">
+      {{ .Content }}
+    </div>
+  </div>
+</article>
+{{ end }}

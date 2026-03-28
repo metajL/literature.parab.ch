@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="container" style="padding: 4rem 0;">
+  <div class="section-header">
+    <h1 class="section-header__title">{{ .Title }}</h1>
+  </div>
+  <div class="chip-group" style="margin-top: 2rem;">
+    {{- range .Pages }}
+    <a href="{{ .RelPermalink }}" class="chip">
+      {{ .Title }}<span class="chip__count">({{ len .Pages }})</span>
+    </a>
+    {{- end }}
+  </div>
+</div>
+{{ end }}

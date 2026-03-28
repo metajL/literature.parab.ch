@@ -1,0 +1,21 @@
+.input {
+  font-family: $font-ui;
+  font-size: $fs-base;
+  padding: $spacing-3 $spacing-5;
+  border: $ghost-border;
+  border-radius: $border-radius;
+  background: $surface;
+  color: $on-surface;
+  outline: none;
+  width: 100%;
+  transition: border-color $transition-fast, box-shadow $transition-fast;
+
+  &::placeholder {
+    color: $outline;
+  }
+
+  &:focus {
+    border-color: rgba($primary, 0.4);
+    box-shadow: 0 0 0 3px rgba($primary, 0.08);
+  }
+}

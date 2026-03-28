@@ -1,0 +1,24 @@
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="{{ .Site.BaseURL }}" class="nav__brand">
+      <img src="{{ "images/logo.webp" | relURL }}" alt="{{ .Site.Title }}" class="nav__logo">
+    </a>
+    <nav class="nav__links">
+      {{- range .Site.Menus.main }}
+      <a href="{{ .URL }}" class="nav__link{{ if $.IsMenuCurrent "main" . }} nav__link--active{{ end }}">{{ .Name }}</a>
+      {{- end }}
+      <button class="nav__search-btn" id="search-open" aria-label="Suche">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" d="m21 21-4.35-4.35"/></svg>
+      </button>
+    </nav>
+    <button class="nav__hamburger" id="hamburger" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobile-nav">
+  {{- range .Site.Menus.main }}
+  <a href="{{ .URL }}" class="mobile-nav__link">{{ .Name }}</a>
+  {{- end }}
+  <button class="mobile-nav__link" id="mobile-search-open">Suche</button>
+</div>

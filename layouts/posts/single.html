@@ -1,0 +1,28 @@
+{{ define "main" }}
+<article class="container">
+  <div class="post-layout{{ if .TableOfContents }} post-layout--with-toc{{ end }}">
+    <header style="margin-bottom: 2rem;">
+      {{ partial "post-meta.html" . }}
+      <h1 style="margin-top: 1rem;">{{ .Title }}</h1>
+      {{ with .Description }}
+      <p class="text-muted" style="font-size: 1.125rem; margin-top: 0.75rem;">{{ . }}</p>
+      {{ end }}
+      {{ with .Params.tags }}
+      <div class="chip-group" style="margin-top: 1rem;">
+        {{- range . }}
+        <a href="{{ "tags/" | relURL }}{{ . | urlize }}/" class="chip">{{ . }}</a>
+        {{- end }}
+      </div>
+      {{ end }}
+    </header>
+
+    {{ partial "toc.html" . }}
+
+    <div class="prose">
+      {{ .Content }}
+    </div>
+
+    {{ partial "related-posts.html" . }}
+  </div>
+</article>
+{{ end }}

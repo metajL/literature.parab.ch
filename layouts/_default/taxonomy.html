@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="container" style="padding: 4rem 0;">
+  <div class="section-header">
+    <h1 class="section-header__title">{{ .Title }}</h1>
+    <p class="section-header__description">
+      {{ len .Pages }} {{ if eq (len .Pages) 1 }}Beitrag{{ else }}Beiträge{{ end }}
+    </p>
+  </div>
+  <div class="post-grid">
+    {{- range .Pages }}
+    {{ partial "post-card.html" (dict "page" . "featured" false) }}
+    {{- end }}
+  </div>
+  {{ partial "pagination.html" . }}
+</div>
+{{ end }}

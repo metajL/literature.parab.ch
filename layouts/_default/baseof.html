@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+  {{- partial "head.html" . -}}
+</head>
+<body>
+  {{- partial "reading-progress.html" . -}}
+  {{- partial "nav.html" . -}}
+  <div class="page-wrapper">
+    <main class="main-content">
+      {{- block "main" . }}{{ end -}}
+    </main>
+    {{- partial "footer.html" . -}}
+  </div>
+  {{- partial "search-overlay.html" . -}}
+  <script src="{{ (resources.Get "js/nav.js" | minify | fingerprint).RelPermalink }}"></script>
+  {{- if .IsPage }}
+    {{- if .Params.toc | default true }}
+  <script src="{{ (resources.Get "js/toc.js" | minify | fingerprint).RelPermalink }}"></script>
+    {{- end }}
+  <script src="{{ (resources.Get "js/reading-progress.js" | minify | fingerprint).RelPermalink }}"></script>
+  {{- end }}
+  <script src="{{ (resources.Get "js/search.js" | minify | fingerprint).RelPermalink }}"></script>
+</body>
+</html>

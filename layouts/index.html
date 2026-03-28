@@ -1,0 +1,44 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="container">
+    <h1 class="hero__title">{{ .Site.Title }}</h1>
+    <p class="hero__subtitle">{{ .Site.Params.description }}</p>
+  </div>
+</section>
+
+{{/* Neueste Beiträge */}}
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ with $posts }}
+<section class="container" style="padding-bottom: 4rem;">
+  <div class="section-header">
+    <h2 class="section-header__title">Neueste Beiträge</h2>
+    <p class="section-header__description">Aktuelle Texte und Essays</p>
+  </div>
+  <div class="post-grid">
+    {{- range $index, $page := first 7 . }}
+    {{ partial "post-card.html" (dict "page" $page "featured" (eq $index 0)) }}
+    {{- end }}
+  </div>
+  {{ if gt (len .) 7 }}
+  <div style="text-align: center; margin-top: 2rem;">
+    <a href="{{ "posts/" | relURL }}" class="btn btn--ghost">Alle Beiträge ansehen &rarr;</a>
+  </div>
+  {{ end }}
+</section>
+{{ end }}
+
+{{/* Themen */}}
+{{ $tags := .Site.Taxonomies.tags }}
+{{ if gt (len $tags) 0 }}
+<section class="container" style="padding: 4rem 0;">
+  <div class="section-header">
+    <h2 class="section-header__title">Themen</h2>
+  </div>
+  <div class="chip-group">
+    {{- range $name, $pages := $tags }}
+    <a href="{{ "tags/" | relURL }}{{ $name | urlize }}/" class="chip">{{ $name }}</a>
+    {{- end }}
+  </div>
+</section>
+{{ end }}
+{{ end }}

@@ -1,0 +1,80 @@
+.footer {
+  background: $surface-container;
+  padding: $spacing-16 0 $spacing-8;
+  margin-top: auto;
+
+  &__inner {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 $spacing-8;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: $spacing-12;
+    gap: $spacing-8;
+  }
+
+  &__brand {
+    font-family: $font-display;
+    font-weight: $fw-bold;
+    font-size: $fs-xl;
+    color: $primary;
+    margin-bottom: $spacing-3;
+  }
+
+  &__tagline {
+    color: $on-surface-variant;
+    font-size: $fs-sm;
+    max-width: 300px;
+  }
+
+  &__links {
+    display: flex;
+    gap: $spacing-12;
+  }
+
+  &__col-title {
+    font-family: $font-ui;
+    font-size: $fs-xs;
+    font-weight: $fw-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $on-surface-variant;
+    margin-bottom: $spacing-4;
+  }
+
+  &__col-link {
+    display: block;
+    font-size: $fs-sm;
+    color: $on-surface-variant;
+    padding: $spacing-1 0;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &__bottom {
+    border-top: $ghost-border;
+    padding-top: $spacing-6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $font-ui;
+    font-size: $fs-xs;
+    color: $outline;
+  }
+
+  &__rss {
+    color: $outline;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}

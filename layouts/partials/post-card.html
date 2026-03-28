@@ -1,0 +1,29 @@
+<article class="post-card{{ if .featured }} post-card--featured{{ end }}">
+  <a href="{{ .page.RelPermalink }}" style="text-decoration: none; color: inherit; display: contents;">
+    {{ if .featured }}
+    <div class="post-card__image">
+      {{ with .page.Params.image }}
+      <img src="{{ . }}" alt="{{ $.page.Title }}">
+      {{ else }}
+      <span>Beitrag</span>
+      {{ end }}
+    </div>
+    {{ end }}
+    <div>
+      <div class="post-card__meta">
+        <time>{{ .page.Date.Format "2. Jan. 2006" }}</time>
+        <span class="post-card__dot"></span>
+        <span>{{ .page.ReadingTime }} Min.</span>
+      </div>
+      <h3 class="post-card__title">{{ .page.Title }}</h3>
+      <p class="post-card__excerpt">{{ .page.Summary | plainify | truncate 160 }}</p>
+      {{ with .page.Params.tags }}
+      <div class="post-card__tags">
+        {{- range first 3 . }}
+        <span class="chip">{{ . }}</span>
+        {{- end }}
+      </div>
+      {{ end }}
+    </div>
+  </a>
+</article>

@@ -1,0 +1,126 @@
+body {
+  font-family: $font-body;
+  font-size: $fs-base;
+  font-weight: $fw-regular;
+  line-height: $lh-normal;
+  color: $on-surface;
+  background-color: $surface;
+}
+
+h1, h2, h3, h4 {
+  font-family: $font-display;
+  font-weight: $fw-bold;
+  line-height: $lh-tight;
+  color: $on-surface;
+}
+
+h1 { font-size: $fs-hero; }
+h2 { font-size: $fs-2xl;  margin-top: $spacing-12; margin-bottom: $spacing-6; }
+h3 { font-size: $fs-xl;   margin-top: $spacing-10; margin-bottom: $spacing-4; }
+h4 { font-size: $fs-lg;   margin-top: $spacing-8;  margin-bottom: $spacing-3; }
+
+.prose {
+  font-size: $fs-md;
+  line-height: $lh-relaxed;
+
+  p {
+    margin-bottom: $spacing-6;
+  }
+
+  a {
+    color: $primary;
+    text-decoration: underline;
+    text-decoration-color: rgba($primary, 0.3);
+    text-underline-offset: 3px;
+    transition: text-decoration-color $transition-fast;
+
+    &:hover {
+      text-decoration-color: $primary;
+    }
+  }
+
+  blockquote {
+    border-left: 3px solid $primary;
+    padding: $spacing-4 $spacing-6;
+    margin: $spacing-8 0;
+    background: $surface-container;
+    border-radius: 0 $border-radius-sm $border-radius-sm 0;
+    font-style: italic;
+    color: $on-surface-variant;
+  }
+
+  ul, ol {
+    margin-bottom: $spacing-6;
+    padding-left: $spacing-8;
+  }
+
+  ul { list-style: disc; }
+  ol { list-style: decimal; }
+
+  li {
+    margin-bottom: $spacing-2;
+  }
+
+  code {
+    font-size: 0.9em;
+    background: $surface-container;
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    font-family: 'Fira Code', 'Cascadia Code', monospace;
+  }
+
+  pre {
+    background: $on-surface;
+    color: $surface;
+    padding: $spacing-6;
+    border-radius: $border-radius;
+    overflow-x: auto;
+    margin: $spacing-8 0;
+
+    code {
+      background: none;
+      padding: 0;
+      font-size: $fs-sm;
+      color: inherit;
+    }
+  }
+
+  img {
+    border-radius: $border-radius;
+    margin: $spacing-8 0;
+  }
+
+  hr {
+    border: none;
+    height: 1px;
+    background: $surface-container-high;
+    margin: $spacing-12 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: $spacing-8 0;
+
+    th, td {
+      padding: $spacing-3 $spacing-4;
+      text-align: left;
+      border-bottom: $ghost-border;
+    }
+
+    th {
+      font-family: $font-ui;
+      font-weight: $fw-semibold;
+      font-size: $fs-sm;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: $on-surface-variant;
+    }
+  }
+}
+
+.text-sm { font-size: $fs-sm; }
+.text-xs { font-size: $fs-xs; }
+.text-muted { color: $on-surface-variant; }
+.font-ui { font-family: $font-ui; }
+.font-display { font-family: $font-display; }

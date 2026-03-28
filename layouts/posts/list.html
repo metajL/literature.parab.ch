@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="container" style="padding: 4rem 0;">
+  <div class="section-header">
+    <h1 class="section-header__title">{{ .Title | default "Beiträge" }}</h1>
+    {{ with .Description }}
+    <p class="section-header__description">{{ . }}</p>
+    {{ end }}
+  </div>
+
+  {{/* Themen-Chips */}}
+  {{ $tags := .Site.Taxonomies.tags }}
+  {{ if gt (len $tags) 0 }}
+  <div class="chip-group" style="margin-bottom: 2rem;">
+    {{- range $name, $pages := $tags }}
+    <a href="{{ "tags/" | relURL }}{{ $name | urlize }}/" class="chip">{{ $name }}</a>
+    {{- end }}
+  </div>
+  {{ end }}
+
+  <div class="post-grid">
+    {{- range (.Paginate .Pages.ByDate.Reverse).Pages }}
+    {{ partial "post-card.html" (dict "page" . "featured" false) }}
+    {{- end }}
+  </div>
+
+  {{ partial "pagination.html" . }}
+</div>
+{{ end }}

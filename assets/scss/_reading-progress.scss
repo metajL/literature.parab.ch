@@ -1,0 +1,17 @@
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: $z-nav + 1;
+  background: transparent;
+  pointer-events: none;
+
+  &__bar {
+    height: 100%;
+    width: 0%;
+    background: $gradient-primary;
+    transition: width 100ms linear;
+  }
+}

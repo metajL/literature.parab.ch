@@ -1,0 +1,60 @@
+baseURL = "https://literature.parab.ch/"
+languageCode = "de"
+title = "Literatur"
+paginate = 12
+summaryLength = 40
+enableRobotsTXT = true
+enableEmoji = false
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[params]
+  description = "Ein kuratierter Raum für Literatur, Essays und das geschriebene Wort."
+  author = "David Parab"
+  mainSections = ["posts"]
+  readingSpeed = 200
+
+[params.social]
+  github = ""
+  twitter = ""
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+
+[outputFormats]
+  [outputFormats.RSS]
+    mediatype = "application/rss+xml"
+    baseName = "feed"
+
+[menus]
+  [[menus.main]]
+    name = "Startseite"
+    url = "/"
+    weight = 1
+  [[menus.main]]
+    name = "Beiträge"
+    url = "/posts/"
+    weight = 2
+  [[menus.main]]
+    name = "Themen"
+    url = "/tags/"
+    weight = 3
+
+[minify]
+  [minify.tdewolff]
+    [minify.tdewolff.css]
+      version = 2
+    [minify.tdewolff.html]
+      keepWhitespace = false

@@ -1,0 +1,25 @@
+.about {
+  padding: $spacing-16 0;
+
+  &__header {
+    margin-bottom: $spacing-12;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: $fs-3xl;
+    margin-bottom: $spacing-4;
+  }
+
+  &__subtitle {
+    color: $on-surface-variant;
+    font-size: $fs-md;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  &__content {
+    max-width: $content-width;
+    margin: 0 auto;
+  }
+}

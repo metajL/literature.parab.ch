@@ -1,0 +1,27 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand">{{ .Site.Title }}</div>
+        <p class="footer__tagline">{{ .Site.Params.description }}</p>
+      </div>
+      <div class="footer__links">
+        <div>
+          <div class="footer__col-title">Navigation</div>
+          {{- range .Site.Menus.main }}
+          <a href="{{ .URL }}" class="footer__col-link">{{ .Name }}</a>
+          {{- end }}
+        </div>
+        <div>
+          <div class="footer__col-title">Entdecken</div>
+          <a href="{{ "tags/" | relURL }}" class="footer__col-link">Themen</a>
+          <a href="{{ "categories/" | relURL }}" class="footer__col-link">Kategorien</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; {{ now.Year }} {{ .Site.Title }}</span>
+      <a href="{{ "feed.xml" | relURL }}" class="footer__rss">RSS-Feed</a>
+    </div>
+  </div>
+</footer>

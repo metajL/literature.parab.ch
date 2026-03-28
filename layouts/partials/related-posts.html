@@ -1,0 +1,11 @@
+{{ $related := first 3 (.Site.RegularPages.Related .) }}
+{{ with $related }}
+<section class="related-posts">
+  <h2 class="section-header__title">Ähnliche Beiträge</h2>
+  <div class="post-grid" style="margin-top: 1.5rem;">
+    {{- range . }}
+    {{ partial "post-card.html" (dict "page" . "featured" false) }}
+    {{- end }}
+  </div>
+</section>
+{{ end }}

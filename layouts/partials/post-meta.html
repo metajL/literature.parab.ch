@@ -1,0 +1,13 @@
+<div class="post-meta font-ui text-sm text-muted">
+  <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2. January 2006" }}</time>
+  {{- with .ReadingTime }}
+  <span class="post-meta__sep">&middot;</span>
+  <span>{{ . }} Min. Lesezeit</span>
+  {{- end }}
+  {{- with .Params.categories }}
+  <span class="post-meta__sep">&middot;</span>
+  {{- range first 1 . }}
+  <a href="{{ "categories/" | relURL }}{{ . | urlize }}/" class="post-meta__category">{{ . }}</a>
+  {{- end }}
+  {{- end }}
+</div>

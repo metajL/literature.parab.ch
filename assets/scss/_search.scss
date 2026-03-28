@@ -1,0 +1,110 @@
+.search-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba($on-surface, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: $z-search;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+
+  &.is-open {
+    display: flex;
+  }
+}
+
+.search-modal {
+  background: $surface;
+  border-radius: $border-radius-lg;
+  max-width: 560px;
+  width: 90vw;
+  max-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: $shadow-hover;
+  overflow: hidden;
+
+  &__header {
+    padding: $spacing-5 $spacing-6;
+    border-bottom: $ghost-border;
+    display: flex;
+    align-items: center;
+    gap: $spacing-3;
+  }
+
+  &__icon {
+    color: $outline;
+    flex-shrink: 0;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__input {
+    flex: 1;
+    border: none;
+    background: none;
+    font-family: $font-body;
+    font-size: $fs-md;
+    color: $on-surface;
+    outline: none;
+
+    &::placeholder {
+      color: $outline;
+    }
+  }
+
+  &__close {
+    background: $surface-container;
+    border: none;
+    border-radius: $border-radius-sm;
+    padding: $spacing-1 $spacing-2;
+    font-family: $font-ui;
+    font-size: $fs-xs;
+    color: $on-surface-variant;
+    cursor: pointer;
+  }
+
+  &__results {
+    overflow-y: auto;
+    padding: $spacing-4;
+  }
+
+  &__empty {
+    padding: $spacing-8;
+    text-align: center;
+    color: $outline;
+    font-family: $font-ui;
+    font-size: $fs-sm;
+  }
+}
+
+.search-result {
+  display: block;
+  padding: $spacing-4;
+  border-radius: $border-radius-sm;
+  transition: background $transition-fast;
+  text-decoration: none;
+
+  &:hover {
+    background: $surface-container;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-weight: $fw-semibold;
+    font-size: $fs-base;
+    color: $on-surface;
+    margin-bottom: $spacing-1;
+  }
+
+  &__excerpt {
+    font-size: $fs-sm;
+    color: $on-surface-variant;
+    line-height: $lh-normal;
+  }
+}

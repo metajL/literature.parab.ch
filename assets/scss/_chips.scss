@@ -1,0 +1,40 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  font-family: $font-ui;
+  font-size: $fs-xs;
+  font-weight: $fw-medium;
+  padding: $spacing-1 $spacing-3;
+  border-radius: $border-radius-xl;
+  background: $surface-container;
+  color: $on-surface-variant;
+  transition: background $transition-fast, color $transition-fast;
+  text-decoration: none;
+
+  &:hover {
+    background: $surface-container-high;
+    color: $primary;
+  }
+
+  &--active {
+    background: $primary;
+    color: $on-primary;
+
+    &:hover {
+      background: $primary-light;
+      color: $on-primary;
+    }
+  }
+
+  &__count {
+    margin-left: $spacing-2;
+    font-size: $fs-xs;
+    opacity: 0.7;
+  }
+}
+
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-2;
+}
