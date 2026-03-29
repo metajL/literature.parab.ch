@@ -11,10 +11,10 @@ categories: ["Buch"]
 toc: false
 ---
 
-__Authoren dieser Resourse:__ Alexander und Ann Shulgin
-__Uhrsprüngliche Veröffentlichung:__ 1991
+__Authoren dieser Resourse:__ Alexander und Ann Shulgin <br>
+__Uhrsprüngliche Veröffentlichung:__ 1991 <br>
 
-## Warum dieses ...
+## Warum dieses Buch
 
 ...
 
